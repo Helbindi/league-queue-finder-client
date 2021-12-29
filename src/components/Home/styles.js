@@ -17,6 +17,8 @@ export default makeStyles((theme) => ({
     maxWidth: '500px',
   },
   gridContainer: {
+    maxWidth: '1500px',
+    margin: '0 auto',
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column-reverse',
     },
