@@ -12,8 +12,7 @@ export default makeStyles((theme) => ({
     width: '100%',
     color: 'white',
     borderRadius: '0.5em',
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
-                      url(${background})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(${background})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     [theme.breakpoints.down('md')]: {
@@ -23,7 +22,7 @@ export default makeStyles((theme) => ({
   },
   section: {
     borderRadius: '0.5em',
-    padding: '1em',
+    margin: '1em',
     marginBottom: '1em',
     flex: 1,
   },
@@ -95,6 +94,9 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      paddingRight: '1em',
+    },
   },
   paper: {
     background: '#F0F0F0',
@@ -105,5 +107,5 @@ export default makeStyles((theme) => ({
   divider: {
     margin: '20px 0',
     background: 'white',
-  },
+  }
 }));

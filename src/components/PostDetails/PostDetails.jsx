@@ -44,7 +44,7 @@ const PostDetails = () => {
   const recommendedPosts = posts.filter(({ _id }) => _id !== post._id).slice(0,4);
 
   return (
-    <Paper style={{ margin: '1em auto', padding: '1em', borderRadius: '15px', maxWidth: '1400px' }} elevation={6}>
+    <Paper style={{ margin: '0 auto', borderRadius: '15px', maxWidth: '1400px' }} elevation={6}>
       <div className={classes.card}>
         <div className={classes.section}>
           <Typography variant="h3" component="h2">{post.mode.toUpperCase()}: {post?.title}</Typography>
@@ -60,9 +60,6 @@ const PostDetails = () => {
           
           <Comments post={post} />
         </div>
-        {/* <div className={classes.imageSection}>
-          <img className={classes.media} src={image} alt='background' />
-        </div> */}
       </div>
 
       {!!recommendedPosts.length && (

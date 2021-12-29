@@ -10,6 +10,7 @@ export default makeStyles((theme) => ({
   card: {
     display: 'flex',
     width: '100%',
+    marginBottom: '2em',
     [theme.breakpoints.down('md')]: {
       flexWrap: 'wrap',
       flexDirection: 'column',

@@ -63,6 +63,7 @@ const Post = ({ post, setCurrentId }) => {
           <Typography variant="h6">{post?.username}</Typography>
           <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
         </div>
+        
         {(userId === post?.creator) && (
         <div className={classes.overlay2} name="edit">
           <Button
@@ -77,6 +78,7 @@ const Post = ({ post, setCurrentId }) => {
           </Button>
         </div>
         )}
+
         <div className={classes.details}>
           <Typography variant="body2" color="textSecondary" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
         </div>
@@ -85,6 +87,7 @@ const Post = ({ post, setCurrentId }) => {
           <Typography variant="body2" color="textSecondary" component="p">{post.message.split(' ').splice(0, 20).join(' ')}...</Typography>
         </CardContent>
       </ButtonBase>
+
       <CardActions className={classes.cardActions}>
         <Button size="small" color="primary" disabled={!user?.result} onClick={handleLike}>
           <Likes />

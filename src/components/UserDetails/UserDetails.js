@@ -48,9 +48,9 @@ function UserDetails() {
         <Paper style={{ margin: '1em auto', padding: '1em', borderRadius: '15px', maxWidth: '1400px' }} elevation={6}>
             <div className={classes.card}>
                 <div className={classes.section}>
-                    <Typography variant="h3" component="h2">{user['username']}</Typography>
+                    <Typography variant="h3" component="h2" align='center'><strong>{user?.username}</strong></Typography>
                     <Divider style={{ margin: '20px 0' }} />
-                    <Typography style={{padding: '0 20px'}} gutterBottom variant="body1" component="p"> {user['message'] || 'Hope to see you on the Rift soon!'} </Typography>
+                    <Typography style={{padding: '0 20px'}} gutterBottom variant="body1" component="p"> {user?.message || 'Hope to see you on the Rift soon!'} </Typography>
                 </div>
 
                 <div className={classes.imageSection}>
@@ -58,7 +58,7 @@ function UserDetails() {
                 </div>
             </div>
 
-            <Typography gutterBottom variant="h5">{user['username']}'s Post: </Typography>
+            <Typography gutterBottom variant="h5">{user?.username}'s Post: </Typography>
             <Divider style={{ margin: '1em 0' }}/>
             {!!posts.length && (
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>

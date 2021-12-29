@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Typography, TextField, Button, Paper } from '@material-ui/core';
+import { FiSmile } from 'react-icons/fi';
 import { useDispatch } from 'react-redux';
 
 import { commentPost } from '../../actions/posts.js';
@@ -28,6 +29,12 @@ const Comments = ({ post }) => {
         <>
             <div className={classes.commentsOuterContainer}>
                 <div className={classes.commentsInnerContainer}>
+                    {/* if there are no comments, display message. */}
+                    {comments?.length == 0
+                        ? <Typography variant="h5" align="center" > <strong>Be the first to leave a comment!</strong> <FiSmile /> </Typography>
+                        : null
+                    }
+
                     {comments.map((comment, index) => (
                         <Typography key={index} style={{ wordWrap: "break-word" }} gutterBottom variant="subtitle1">
                             <strong>{comment.split(': ')[0]}: </strong> {comment.split(':')[1]}
@@ -36,12 +43,15 @@ const Comments = ({ post }) => {
                     <div ref={commentsRef} />
                 </div>
 
-                {user?.result?.username ? null
-                    : <Paper className={classes.paper}>
+                {!user?.result?.username 
+                    // if user is not logged in, display message.
+                    ? <Paper className={classes.paper}>
                         <Typography variant="h6" align="center">
                         <a href='/auth'>Sign In</a> to leave a comment.
                         </Typography>
-                    </Paper> }
+                      </Paper>
+                    : null
+                }
                 
                 {user?.result?.username && (
                     <div className={classes.commentsForm}>

@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { deepPurple } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
   mainContainer: {
@@ -9,6 +8,7 @@ export default makeStyles((theme) => ({
     flexDirection: 'row',
     alignItems: 'center',
     padding: '10px 50px',
+    border: '1px solid red',
   },
   heading: {
     color: 'rgba(0,183,255, 1)',
@@ -37,10 +37,6 @@ export default makeStyles((theme) => ({
   },
   smMargin: {
     margin: theme.spacing(1),
-  },
-  purple: {
-    color: theme.palette.getContrastText(deepPurple[500]),
-    backgroundColor: deepPurple[500],
   },
   [theme.breakpoints.down('sm')]: {
     appBar: {
