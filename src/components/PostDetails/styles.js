@@ -60,11 +60,15 @@ export default makeStyles((theme) => ({
   commentsOuterContainer: {
     display: 'flex',
     color: 'black',
+    border: '1px solid yellow',
+    padding: '1em',
+    background: '#F0F0F0',
     justifyContent: 'space-between',
     [theme.breakpoints.down('sm')]: {
       flexWrap: 'wrap',
       flexDirection: 'column',
       alignItems: 'center',
+
     },
   },
   commentsInnerContainer: {
@@ -73,7 +77,9 @@ export default makeStyles((theme) => ({
     marginRight: '1em',
     padding: '1em',
     width: '50%',
-    background: '#F0F0F0',
+    background: 'white',
+    border: '1px solid black',
+    borderRadius: '0.5em',
     [theme.breakpoints.down('sm')]: {
       marginRight: '0',
       marginBottom: '1em',
@@ -81,9 +87,11 @@ export default makeStyles((theme) => ({
     },
   },
   commentsForm: {
-    background: '#F0F0F0',
+    background: 'white',
     padding: '1em',
     width: '50%',
+    border: '1px solid black',
+    borderRadius: '0.5em',
     [theme.breakpoints.down('sm')]: {
       width: '90%',
     },
@@ -101,11 +109,21 @@ export default makeStyles((theme) => ({
   paper: {
     background: '#F0F0F0',
     margin: '1em auto',
-    padding: '1em',
-    
+    padding: '1em 0',
+    width: '40%',
+    [theme.breakpoints.down('sm')]: {
+      width: '80%',
+    },
   },
   divider: {
     margin: '20px 0',
     background: 'white',
-  }
+  },
+  message: {
+    fontWeight: 800,
+    wordBreak: 'break-all',
+    maxWidth: '700px',
+    margin: '0 auto',
+    padding: '0 1em',
+  },
 }));

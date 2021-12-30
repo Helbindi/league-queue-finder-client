@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Paper, Typography, CircularProgress, Divider, Grid } from '@material-ui/core/';
+import { Paper, Typography, CircularProgress, Divider, Grid, Button } from '@material-ui/core/';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 
@@ -11,30 +11,26 @@ import { fetchUser } from '../../api/index';
 
 function UserDetails() {
     const { posts, isLoading } = useSelector((state) => state.posts);
-    const [user, setUser] = useState([]);
-    const [userData, setUserData] = useState({ username: '', email: '', message: '' });
-    const [isEdit, setIsEdit] = useState(false);
+    const [profile, setProfile] = useState([]);
 
     const dispatch = useDispatch();
     const history = useHistory();
     const classes = useStyles();
     const { id } = useParams();
-
-    const clear = () => {
-        setIsEdit(false);
-        setUserData( { username: '', email: '', message: '' } );
-    };
+    const user = JSON.parse(localStorage.getItem('profile'));
 
     useEffect(async() => {
         try {
             const { data } = await fetchUser(id);
-            setUser(data);
+            setProfile(data);
 
             dispatch(getPostsByUser(id));
         } catch (error) {
             console.log(error);
         }
     }, [id]);
+
+    const openEdit = (userID) => history.push(`/user/${userID}/edit`);
 
     if (isLoading) {
         return (
@@ -44,13 +40,20 @@ function UserDetails() {
         );
     }
 
+    // check if logged in User is the same as profile User
+    const isUser = (id == user?.result?._id) ? true : false;
+
     return (
         <Paper style={{ margin: '1em auto', padding: '1em', borderRadius: '15px', maxWidth: '1400px' }} elevation={6}>
+            {isUser 
+                ? <Button variant="contained" onClick={() => openEdit(id)}>Edit</Button>
+                : null
+            }
             <div className={classes.card}>
                 <div className={classes.section}>
-                    <Typography variant="h3" component="h2" align='center'><strong>{user?.username}</strong></Typography>
+                    <Typography variant="h3" component="h2" align='center'><strong>{profile?.username}</strong></Typography>
                     <Divider style={{ margin: '20px 0' }} />
-                    <Typography style={{padding: '0 20px'}} gutterBottom variant="body1" component="p"> {user?.message || 'Hope to see you on the Rift soon!'} </Typography>
+                    <Typography style={{padding: '0 20px'}} gutterBottom variant="body1" component="p"> {profile?.message || 'Hope to see you on the Rift soon!'} </Typography>
                 </div>
 
                 <div className={classes.imageSection}>
@@ -58,7 +61,7 @@ function UserDetails() {
                 </div>
             </div>
 
-            <Typography gutterBottom variant="h5">{user?.username}'s Post: </Typography>
+            <Typography gutterBottom variant="h5">{profile?.username}'s Post: </Typography>
             <Divider style={{ margin: '1em 0' }}/>
             {!!posts.length && (
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>
@@ -73,4 +76,4 @@ function UserDetails() {
     );
 }
 
-export default UserDetails
+export default UserDetails;

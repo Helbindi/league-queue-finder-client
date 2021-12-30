@@ -54,7 +54,7 @@ const PostDetails = () => {
 
           <Divider className={classes.divider} />
           
-          <Typography variant="body1" component="p" style={{textAlign: 'center', fontWeight: 800}}>{post.message}</Typography>
+          <Typography variant="body1" component="p" className={classes.message}>{post.message}</Typography>
           
           <Divider className={classes.divider} />
           

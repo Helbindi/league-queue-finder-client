@@ -10,10 +10,11 @@ import useStyles from './styles';
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({ title: '', message: '', tags: [], mode: '' });
   const post = useSelector((state) => (currentId ? state.posts.posts.find((message) => message._id === currentId) : null));
+
   const dispatch = useDispatch();
+  const history = useHistory();
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem('profile'));
-  const history = useHistory();
 
   const clear = () => {
     setCurrentId(0);

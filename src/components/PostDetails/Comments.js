@@ -30,7 +30,7 @@ const Comments = ({ post }) => {
             <div className={classes.commentsOuterContainer}>
                 <div className={classes.commentsInnerContainer}>
                     {/* if there are no comments, display message. */}
-                    {comments?.length == 0
+                    {comments?.length === 0
                         ? <Typography variant="h5" align="center" > <strong>Be the first to leave a comment!</strong> <FiSmile /> </Typography>
                         : null
                     }
