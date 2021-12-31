@@ -14,5 +14,18 @@ export default makeStyles((theme) => ({
     padding: '1em',
     borderRadius: '15px',
     maxWidth: '300px',
-  }
+  },
+  root: {
+  '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+    },
+  },
+  form: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
+  buttonSubmit: {
+    marginBottom: '0.5em',
+  },
 }));

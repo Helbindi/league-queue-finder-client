@@ -38,6 +38,7 @@ export default makeStyles((theme) => ({
   },
   userName: {
     display: 'flex',
+    textAlign: 'center',
     alignItems: 'center',
   },
   brandContainer: {
@@ -48,5 +49,10 @@ export default makeStyles((theme) => ({
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
     cursor: 'pointer',
+    margin: 'auto 0',
+  },
+  logout: {
+    maxHeight: '50px',
+    margin: 'auto 0',
   },
 }));

@@ -34,6 +34,10 @@ const Navbar = () => {
     setUser(JSON.parse(localStorage.getItem('profile')));
   }, [location]);
 
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem('profile')));
+  }, [])
+
   const openUser = (userID) => history.push(`/user/${userID}`);
 
   return (
