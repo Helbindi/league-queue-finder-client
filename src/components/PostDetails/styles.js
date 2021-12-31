@@ -21,6 +21,7 @@ export default makeStyles((theme) => ({
     },
   },
   section: {
+    wordBreak: 'break-word',
     borderRadius: '0.5em',
     margin: '1em',
     marginBottom: '1em',

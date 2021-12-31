@@ -52,7 +52,8 @@ const Home = () => {
   return (
     <Grow in>
       <Container maxWidth="xl">
-        <Grid container justifyContent="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
+        <Grid container spacing={3} className={classes.gridContainer}>
+          {/* All Posts */}
           <Grid item xs={12} sm={6} md={9}>
             <Posts setCurrentId={setCurrentId} />
 
@@ -71,6 +72,7 @@ const Home = () => {
             )}
           </Grid>
           
+          {/* Search function */}
           <Grid item xs={12} sm={6} md={3}>
             <AppBar className={classes.appBarSearch} position="static" color="inherit">
               <TextField onKeyDown={handleKeyPress} name="search" variant="outlined" label="Search Game Modes" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />
@@ -86,6 +88,7 @@ const Home = () => {
               <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
             </AppBar>
 
+            {/* Create Post Form */}
             <Form currentId={currentId} setCurrentId={setCurrentId} />
           </Grid>
         </Grid>

@@ -78,8 +78,7 @@ const Form = ({ currentId, setCurrentId }) => {
           <FormLabel component="legend">Game Mode</FormLabel>
           <RadioGroup 
             row aria-label="mode" 
-            name="controlled-radio-buttons-group"
-            value={postData.mode}
+            name="radio-buttons-group"
             onChange={(e) => setPostData({ ...postData, mode: e.target.value })}>
 
             <FormControlLabel value="ranked" control={<Radio />} label="Ranked" />

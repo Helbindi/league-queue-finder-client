@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   appBarSearch: {
     borderRadius: 4,
-    marginBottom: '1rem',
+    margin: '1rem 0',
     display: 'flex',
     padding: '1em',
   },
@@ -17,8 +17,11 @@ export default makeStyles((theme) => ({
     maxWidth: '500px',
   },
   gridContainer: {
-    maxWidth: '1500px',
+    maxWidth: '1400px',
     margin: '0 auto',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '-0.8em',
+    },
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column-reverse',
     },

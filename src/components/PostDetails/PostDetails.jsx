@@ -47,7 +47,7 @@ const PostDetails = () => {
     <Paper style={{ margin: '0 auto', borderRadius: '15px', maxWidth: '1400px' }} elevation={6}>
       <div className={classes.card}>
         <div className={classes.section}>
-          <Typography variant="h3" component="h2">{post.mode.toUpperCase()}: {post?.title}</Typography>
+          <Typography variant="h3" component="h2" style={{maxWidth: '20ch'}}>{post.mode.toUpperCase()}: {post?.title}</Typography>
           <Typography variant="h6" color="color" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
           <Typography variant="h6">Created by: <span style={{cursor: 'pointer', textDecoration: 'underline'}} onClick={() => openUser(post.creator)}>{post.username}</span></Typography>
           <Typography gutterBottom variant="body1">{moment(post.createdAt).fromNow()}</Typography>

@@ -3,12 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   mainContainer: {
     borderRadius: 15,
-    margin: '30px 0',
+    margin: '0 auto',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: '10px 50px',
-    border: '1px solid red',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '-0.7em',
+    },
   },
   heading: {
     color: 'rgba(0,183,255, 1)',
@@ -38,25 +39,25 @@ export default makeStyles((theme) => ({
   smMargin: {
     margin: theme.spacing(1),
   },
-  [theme.breakpoints.down('sm')]: {
-    appBar: {
-      padding: '10px 20px',
-    },
-    heading: {
-      display: 'none',
-    },
-    userName: {
-      display: 'none',
-    },
-    image: {
-      marginLeft: '5px',
-    },
-    toolbar: {
-      display: 'flex',
-      justifyContent: 'flex-end',
-      width: '160px',
-    },
-  },
+  // [theme.breakpoints.down('sm')]: {
+  //   appBar: {
+  //     padding: '10px 20px',
+  //   },
+  //   heading: {
+  //     display: 'none',
+  //   },
+  //   userName: {
+  //     display: 'none',
+  //   },
+  //   image: {
+  //     marginLeft: '5px',
+  //   },
+  //   toolbar: {
+  //     display: 'flex',
+  //     justifyContent: 'flex-end',
+  //     width: '160px',
+  //   },
+  // },
 
   actionDiv: {
     textAlign: 'center',

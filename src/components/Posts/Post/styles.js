@@ -41,7 +41,15 @@ export default makeStyles({
     margin: '20px',
   },
   title: {
+    wordBreak: 'break-word',
+    height: '2.2ch',
+    overflow: 'hidden',
     padding: '0 16px',
+  },
+  message: {
+    wordBreak: 'break-word',
+    height: '5ch',
+    overflow: 'hidden',
   },
   cardActions: {
     padding: '0 16px 8px 16px',
