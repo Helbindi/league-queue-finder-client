@@ -41,20 +41,20 @@ const PostDetails = () => {
   }
 
   // filter out User of main post from recommeneded posts.
-  const recommendedPosts = posts.filter(({ _id }) => _id !== post._id).slice(0,4);
+  const recommendedPosts = posts.filter(({ _id }) => _id !== post?._id).slice(0,4);
 
   return (
     <Paper style={{ margin: '0 auto', borderRadius: '15px', maxWidth: '1400px' }} elevation={6}>
       <div className={classes.card}>
         <div className={classes.section}>
-          <Typography variant="h3" component="h2" style={{maxWidth: '20ch'}}>{post.mode.toUpperCase()}: {post?.title}</Typography>
-          <Typography variant="h6" color="color" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
-          <Typography variant="h6">Created by: <span style={{cursor: 'pointer', textDecoration: 'underline'}} onClick={() => openUser(post.creator)}>{post.username}</span></Typography>
-          <Typography gutterBottom variant="body1">{moment(post.createdAt).fromNow()}</Typography>
+          <Typography variant="h3" component="h2" style={{maxWidth: '25ch', margin: '0 auto'}}>{post?.title}</Typography>
+          <Typography variant="h6" color="color" component="h2">{post?.tags.map((tag) => `#${tag} `)}</Typography>
+          <Typography variant="h6">Created by: <span style={{cursor: 'pointer', textDecoration: 'underline'}} onClick={() => openUser(post.creator)}>{post?.username}</span></Typography>
+          <Typography gutterBottom variant="body1">{post?.mode.toUpperCase()} - {moment(post.createdAt).fromNow()}</Typography>
 
           <Divider className={classes.divider} />
           
-          <Typography variant="body1" component="p" className={classes.message}>{post.message}</Typography>
+          <Typography variant="body1" component="p" className={classes.message}>{post?.message}</Typography>
           
           <Divider className={classes.divider} />
           
@@ -67,7 +67,7 @@ const PostDetails = () => {
           <Typography gutterBottom variant="h5">You might also like:</Typography>
           <Divider />
           <div className={classes.recommendedPosts}>
-            {!!recommendedPosts.length && (
+            {!!recommendedPosts?.length && (
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>
                 {recommendedPosts?.map((post) => (
                 <Grid key={post._id} item xs={12} sm={12} md={6} lg={3}>

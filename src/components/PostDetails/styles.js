@@ -12,7 +12,7 @@ export default makeStyles((theme) => ({
     width: '100%',
     color: 'white',
     borderRadius: '0.5em',
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(${background})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(${background})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     [theme.breakpoints.down('md')]: {
@@ -25,6 +25,8 @@ export default makeStyles((theme) => ({
     borderRadius: '0.5em',
     margin: '1em',
     marginBottom: '1em',
+    padding: '3em 1em',
+    textAlign: 'center',
     flex: 1,
   },
   imageSection: {
@@ -44,12 +46,6 @@ export default makeStyles((theme) => ({
       flexDirection: 'column',
     },
   },
-  recommendedCards: {
-    padding: '1em',
-    margin: '1em',
-    cursor: 'pointer',
-    border: '2px solid black',
-  },
   loadingPaper: {
     display: 'flex',
     justifyContent: 'center',
@@ -61,7 +57,6 @@ export default makeStyles((theme) => ({
   commentsOuterContainer: {
     display: 'flex',
     color: 'black',
-    border: '1px solid yellow',
     padding: '1em',
     background: '#F0F0F0',
     justifyContent: 'space-between',
@@ -73,13 +68,14 @@ export default makeStyles((theme) => ({
     },
   },
   commentsInnerContainer: {
+    textAlign: 'left',
     height: '200px',
     overflowY: 'scroll',
     marginRight: '1em',
     padding: '1em',
     width: '50%',
     background: 'white',
-    border: '1px solid black',
+    border: '2px solid black',
     borderRadius: '0.5em',
     [theme.breakpoints.down('sm')]: {
       marginRight: '0',
@@ -91,7 +87,7 @@ export default makeStyles((theme) => ({
     background: 'white',
     padding: '1em',
     width: '50%',
-    border: '1px solid black',
+    border: '2px solid black',
     borderRadius: '0.5em',
     [theme.breakpoints.down('sm')]: {
       width: '90%',
@@ -108,7 +104,8 @@ export default makeStyles((theme) => ({
     },
   },
   paper: {
-    background: '#F0F0F0',
+    background: 'white',
+    border: '2px solid black',
     margin: '1em auto',
     padding: '1em 0',
     width: '40%',
@@ -121,9 +118,10 @@ export default makeStyles((theme) => ({
     background: 'white',
   },
   message: {
+    textAlign: 'center',
     fontWeight: 800,
     wordBreak: 'break-all',
-    maxWidth: '700px',
+    maxWidth: '50ch',
     margin: '0 auto',
     padding: '0 1em',
   },
