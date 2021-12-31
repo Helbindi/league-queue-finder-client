@@ -20,7 +20,7 @@ export default makeStyles((theme) => ({
     maxWidth: '1400px',
     margin: '0 auto',
     [theme.breakpoints.down('sm')]: {
-      marginLeft: '-0.8em',
+      marginLeft: '-1em',
     },
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column-reverse',
