@@ -44,11 +44,12 @@ function UserDetails() {
     const isUser = (id == user?.result?._id) ? true : false;
 
     return (
-        <Paper style={{ margin: '1em auto', padding: '1em', borderRadius: '15px', maxWidth: '1400px' }} elevation={6}>
+        <Paper style={{ background: '#f2f2f2', margin: '1em auto', padding: '1em', borderRadius: '15px', maxWidth: '1400px' }} elevation={6}>
             {isUser 
                 ? <Button variant="contained" onClick={() => openEdit(id)}>Edit</Button>
                 : null
             }
+            
             <div className={classes.card}>
                 <div className={classes.section}>
                     <Typography variant="h3" component="h2" align='center'><strong>{profile?.username}</strong></Typography>
@@ -61,16 +62,16 @@ function UserDetails() {
                 </div>
             </div>
 
-            <Typography gutterBottom variant="h5">{profile?.username}'s Post: </Typography>
+            <Typography gutterBottom variant="h5">{profile?.username}'s Posts: </Typography>
             <Divider style={{ margin: '1em 0' }}/>
             {!!posts.length && (
-            <Grid className={classes.container} container alignItems="stretch" spacing={3}>
-                {posts?.map((post) => (
-                <Grid key={post._id} item xs={12} sm={12} md={6} lg={3}>
-                    <Post post={post} setCurrentId={id} />
+                <Grid className={classes.container} container alignItems="stretch" spacing={3}>
+                    {posts?.map((post) => (
+                    <Grid key={post._id} item xs={12} sm={12} md={6} lg={3}>
+                        <Post post={post} setCurrentId={id} />
+                    </Grid>
+                    ))}
                 </Grid>
-                ))}
-            </Grid>
             )}
         </Paper>
     );

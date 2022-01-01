@@ -63,9 +63,9 @@ const PostDetails = () => {
       </div>
 
       {!!recommendedPosts.length && (
-        <div className={classes.section}>
+        <div className={classes.recommended}>
           <Typography gutterBottom variant="h5">You might also like:</Typography>
-          <Divider />
+          <Divider className={classes.divider} />
           <div className={classes.recommendedPosts}>
             {!!recommendedPosts?.length && (
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>

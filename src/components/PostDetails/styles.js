@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import background from '../../images/5v5.jpg';
+import background2 from '../../images/vi.jpg';
 
 export default makeStyles((theme) => ({
   media: {
@@ -11,8 +12,9 @@ export default makeStyles((theme) => ({
     display: 'flex',
     width: '100%',
     color: 'white',
-    borderRadius: '0.5em',
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(${background})`,
+    borderTopLeftRadius: '0.5em',
+    borderTopRightRadius: '0.5em',
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${background})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     [theme.breakpoints.down('md')]: {
@@ -58,7 +60,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     color: 'black',
     padding: '1em',
-    background: '#F0F0F0',
+    background: '#f2f2f2',
     justifyContent: 'space-between',
     [theme.breakpoints.down('sm')]: {
       flexWrap: 'wrap',
@@ -124,5 +126,20 @@ export default makeStyles((theme) => ({
     maxWidth: '50ch',
     margin: '0 auto',
     padding: '0 1em',
+  },
+  recommended: {
+    wordBreak: 'break-word',
+    padding: '2em',
+    textAlign: 'center',
+    flex: 1,
+
+    borderBottomLeftRadius: '0.5em',
+    borderBottomRightRadius: '0.5em',
+
+    // background: '#f2f2f2',
+    color: 'white',
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${background2})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
   },
 }));
