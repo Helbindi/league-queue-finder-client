@@ -17,17 +17,17 @@ const defaultState = {
 // User Account Management
 function Account() {
     const [userData, setUserData] = useState({ username: '', email: '', message: '' });
-    const [state, dispatch] = useReducer(reducer, defaultState); // Todo: generate a success/error message after edit submission.
+    const [state, dispatch] = useReducer(reducer, defaultState);
+    const [userJWT, setUserJWT] = useState(JSON.parse(localStorage.getItem('profile')));
 
     const { id } = useParams();
-    const user = JSON.parse(localStorage.getItem('profile'));
     const history = useHistory();
     const classes = useStyles();
 
     // check if logged in User is the same as profile User
-    const isUser = (id === user?.result?._id) ? true : false;
+    const isUser = (id === userJWT?.result?._id) ? true : false;
 
-    const API = axios.create({ baseURL: 'http://localhost:5000' });
+    const API = axios.create({ baseURL: 'https://league-queue-finder.herokuapp.com/' });
 
     API.interceptors.request.use((req) => {
         if (localStorage.getItem('profile')) {
@@ -42,7 +42,7 @@ function Account() {
 
     async function getUser() {
         try {
-            const res = await API.get(`http://localhost:5000/user/${id}`);
+            const res = await API.get(`/user/${id}`);
             const data = res.data;
             setUserData({...userData, username: data.username, email: data.email, message: data.message});
             
@@ -53,7 +53,7 @@ function Account() {
 
     async function updateUser() {
         try {
-            const res = await API.patch(`http://localhost:5000/user/${id}`, userData);
+            const res = await API.patch(`/user/${id}`, userData);
             dispatch({ type: 'EDIT_USER' });  
         } catch (error) {
             dispatch({ type: 'EDIT_ERROR' });
