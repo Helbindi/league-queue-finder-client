@@ -1,6 +1,6 @@
 # Deployment
 
-Netlify: https://league-queue-finder.netlify.app/posts
+Netlify: https://league-queue-finder.netlify.app/
 
 # Getting Started with Create React App
 
