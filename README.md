@@ -1,6 +1,7 @@
 # Deployment
 
 Netlify: https://league-queue-finder.netlify.app/
+Backend: https://github.com/Helbindi/league-queue-finder-server
 
 # Getting Started with Create React App
 
